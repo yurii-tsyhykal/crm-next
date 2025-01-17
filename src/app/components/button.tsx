@@ -13,7 +13,7 @@ export default function Button({ disabled, ...rest }: ButtonProps) {
     <button
       {...rest}
       className={clsx(
-        ' bg-gray-900 rounded block w-full text-zinc-50 py-2.5 font-medium text-base',
+        ' bg-gray-900 rounded block text-zinc-50 py-2.5 px-5 font-medium text-base',
         !disabled && 'hover:bg-gray-800 active: bg-gray-950',
         disabled && 'text-zinc-100',
       )}

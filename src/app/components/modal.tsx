@@ -28,7 +28,7 @@ export default function Modal({ show, children, onClose }: ModalProps) {
         >
           <div className="fixed inset-0 bg-gray-700 opacity-60 transition-opacity"></div>
         </Transition.Child>
-        <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-100 shadow-xl transition-all p-7 mx-auto sm:my-10 sm:w-full sm:max-w-2xl">
+        <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-100 shadow-xl transition-all p-7 mx-auto sm:my-10 sm:w-full sm:max-w-custom">
           {children}
         </Dialog.Panel>
       </Dialog>

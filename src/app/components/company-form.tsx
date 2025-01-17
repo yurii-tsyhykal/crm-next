@@ -1,9 +1,10 @@
-'use client'
+'use client';
 
 import { Form, Formik } from 'formik';
 import React from 'react';
 import LogoUploader from './logo-uploader';
 import InputField from './input-field';
+import Button from './button';
 
 export type CompanyFieldsValues = {
   name: string;
@@ -31,7 +32,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form className="flex flex-col gap-10">
-        <p className="font-semibold text-xl text-gray-900 mb-10">
+        <p className="font-semibold text-xl text-gray-900 mb-0.5">
           Add new company
         </p>
         <div className="flex gap-6">
@@ -47,11 +48,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
           <div className="flex flex-col flex-1 gap-5">
             <InputField label="Name" placeholder="Title" name="name" />
             <InputField label="Category" placeholder="Title" name="category" />
-            <InputField
-              label="Joined data"
-              placeholder="14.02.2021"
-              name="date"
-            />
+            <InputField type="date" label="Joined data" name="date" />
             <InputField
               label="Description"
               placeholder="Description"
@@ -59,6 +56,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             />
           </div>
         </div>
+        <Button type="submit">Add company</Button>
       </Form>
     </Formik>
   );

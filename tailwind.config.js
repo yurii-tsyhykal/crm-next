@@ -7,6 +7,12 @@ module.exports = {
         custom:
           '0 2px 4px -2px rgba(85, 105, 135, 0.02), 0 6px 10px -2px rgba(85, 105, 135, 0.04)',
       },
+      minWidth: {
+        custom: '308px',
+      },
+      maxWidth: {
+        custom: '700px',
+      },
     },
   },
   plugins: [],
