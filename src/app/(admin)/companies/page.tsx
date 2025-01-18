@@ -7,9 +7,9 @@ import { Status } from '@/app/components/status-label';
 import Toolbar from '@/app/components/toolbar';
 import React from 'react';
 
-export interface PageProps {}
+// export interface PageProps {}
 
-export default function Page({}: PageProps) {
+export default function Page() {
   return (
     <>
       <Header>Companies</Header>
