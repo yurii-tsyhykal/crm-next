@@ -7,7 +7,7 @@ export interface HeaderProps {
 
 export default function Header({ children }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between py-6 px-7 pl-96 border border-b border-solid border-gray-300 ">
+    <header className="flex items-center justify-between py-6 px-7  border border-b border-solid border-gray-300 ">
       <h1 className="font-semibold text-3xl">{children}</h1>
       <div className="pl-9 border-l flex gap-3">
         <Image
