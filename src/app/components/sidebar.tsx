@@ -5,9 +5,9 @@ import React from 'react';
 import SidebarItem from './sidebar-item';
 import { usePathname, useRouter } from 'next/navigation';
 
-export interface SidebarProps {}
+// export interface SidebarProps {}
 
-export default function Sidebar({}: SidebarProps) {
+export default function Sidebar() {
   const router = useRouter();
   const pathName = usePathname();
   const handleExitClick = () => {
