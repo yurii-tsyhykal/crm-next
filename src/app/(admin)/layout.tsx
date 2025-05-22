@@ -5,7 +5,10 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+
+}: LayoutProps) {
   console.log('render');
   return (
     <>

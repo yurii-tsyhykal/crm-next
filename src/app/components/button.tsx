@@ -6,9 +6,10 @@ import React from 'react';
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
+  children?: string;
 }
 
-export default function Button({ disabled, ...rest }: ButtonProps) {
+export default function Button({ disabled, children, ...rest }: ButtonProps) {
   return (
     <button
       {...rest}
@@ -17,6 +18,6 @@ export default function Button({ disabled, ...rest }: ButtonProps) {
         !disabled && 'hover:bg-gray-800 active: bg-gray-950',
         disabled && 'text-zinc-100',
       )}
-    />
+    >{ children}</button>
   );
 }

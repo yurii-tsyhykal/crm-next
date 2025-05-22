@@ -1,5 +1,6 @@
 import AddCompanyButton from './components/add-company-button';
-// import Sidebar from './components/sidebar';
+import ErrorButton from './components/error-button';
+import Sidebar from './components/sidebar';
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
         Home page{new Date().toTimeString()}
       </h1> */}
       <AddCompanyButton />
-      {/* <Sidebar /> */}
+      <Sidebar />
+      <ErrorButton />
     </main>
   );
 }
