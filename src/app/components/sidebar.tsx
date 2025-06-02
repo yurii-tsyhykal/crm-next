@@ -1,31 +1,33 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
-import SidebarItem from './sidebar-item';
+import Image from 'next/image';
+import SidebarItem from '@/app/components/sidebar-item';
 import { usePathname, useRouter } from 'next/navigation';
 
-// export interface SidebarProps {}
+export interface SidebarProps {}
 
-export default function Sidebar() {
+export default function Sidebar({}: SidebarProps) {
   const router = useRouter();
-  const pathName = usePathname();
+  const pathname = usePathname();
+
   const handleExitClick = () => {
     router.push('/');
   };
+
   return (
-    <aside className="fixed w-60 top-0 left-0 h-screen  bg-gray-900">
-      <div className="flex flex-col h-full w-full pl-4  pb-4 pt-8 pr-1 overflow-y-auto">
+    <aside className="fixed top-0 left-0 z-40 w-60 h-screen">
+      <div className="flex flex-col h-full overflow-y-auto bg-gray-900">
         <Image
-          className="mx-auto mb-[77px]"
+          className="py-8 mb-11 mx-auto"
           width={122}
           height={25}
           src="/icons/logo.svg"
-          alt="Logo"
+          alt="logo"
         />
-        <ul className="flex flex-col gap-7">
+        <ul className="space-y-7">
           <SidebarItem
-            current={pathName === '/dashboard'}
+            current={pathname === '/dashboard'}
             pathname="/dashboard"
             src="/icons/squares.svg"
             alt="dashboard icon"
@@ -33,25 +35,25 @@ export default function Sidebar() {
             Dashboard
           </SidebarItem>
           <SidebarItem
-            current={pathName === '/companies'}
+            current={pathname === '/companies'}
             pathname="/companies"
             src="/icons/briefcase.svg"
-            alt="briefcase icon"
+            alt="companies icon"
           >
             Companies
           </SidebarItem>
         </ul>
         <button
-          className="flex items-center gap-2 mt-auto mx-auto p-6"
+          className="flex items-center gap-2 p-6 mt-auto mx-auto"
           onClick={handleExitClick}
         >
           <Image
-            src="/icons/exit-arrow.svg"
-            alt="exit icon"
             width={18}
             height={18}
+            src="/icons/exit-arrow.svg"
+            alt="exit icon"
           />
-          <span className="text-base text-zinc-50">Exit</span>
+          <span className="font-medium text-white">Exit</span>
         </button>
       </div>
     </aside>

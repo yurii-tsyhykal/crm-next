@@ -1,61 +1,27 @@
 'use client';
 
 import React from 'react';
+import { Field, FieldAttributes } from 'formik';
 
 export interface InputFieldProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    Pick<FieldAttributes<string>, 'as'> {
   label?: string;
 }
 
-const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
-  ({ label, name, ...rest }, ref) => {
-    return (
-      <div className="flex flex-col">
-        {label && (
-          <label
-            htmlFor={name}
-            className=" mb-2 text-base font-normal text-gray-900 "
-          >
-            {label}
-          </label>
-        )}
-        <input
-          {...rest}
-          id={name}
-          name={name}
-          ref={ref}
-          {...rest}
-          className="min-w-custom p-3 max-h-11 text-sm border border-solid border-gray-300 focus:border-gray-300 rounded shadow-custom outline-gray-300"
-        />
-      </div>
-    );
-  },
-);
-InputField.displayName = 'InputField';
-export default InputField;
-
-// export default function InputField({
-//   label,
-//   id,
-//   name,
-//   required,
-//   ...rest
-// }: InputFieldProps) {
-//   return (
-//     <div className="flex flex-col">
-//       {label && (
-//         <label
-//           htmlFor={id}
-//           className=" mb-2 text-base font-normal text-gray-900 "
-//         >
-//           {label}
-//         </label>
-//       )}
-//       <input
-//         {...rest}
-//         id={id}
-//         className="min-w-custom p-3 max-h-11 text-sm border border-solid border-gray-300 focus:border-gray-300 rounded shadow-custom outline-gray-300"
-//       />
-//     </div>
-//   );
-// }
+export default function InputField({ label, id, ...rest }: InputFieldProps) {
+  return (
+    <div className="flex flex-col">
+      {label && (
+        <label htmlFor={id} className="mb-2 text-base color-gray-900">
+          {label}
+        </label>
+      )}
+      <Field
+        {...rest}
+        id={id}
+        className="p-3 h-11 text-sm rounded border border-gray-300 shadow"
+      />
+    </div>
+  );
+}

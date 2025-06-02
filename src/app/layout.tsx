@@ -1,9 +1,16 @@
 import React from 'react';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Plus_Jakarta_Sans, Montserrat } from 'next/font/google';
 import './globals.css';
 import Providers from './components/providers';
 
-const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
+const font = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+});
+const secondFont = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+});
 
 export default function RootLayout({
   children,
@@ -12,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body
+        className={`${font?.className} ${secondFont?.className} font-jakarta`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

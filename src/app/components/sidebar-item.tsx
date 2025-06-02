@@ -1,39 +1,35 @@
-import clsx from 'clsx';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import clsx from 'clsx';
 
 export interface SidebarItemProps {
   current?: boolean;
-  children: React.ReactNode;
+  pathname: string;
   src: string;
   alt: string;
-  pathname: string;
+  children: React.ReactNode;
 }
 
 export default function SidebarItem({
   current,
-  children,
+  pathname,
   src,
   alt,
-  pathname,
+  children,
 }: SidebarItemProps) {
-  const style = {
-    width: '18px',
-    height: '18px',
-  };
   return (
-    <li className=" py-[3px]">
+    <li>
       <Link
         href={pathname}
         className={clsx(
-          'flex gap-[14px] relative items-center',
+          'flex items-center h-9 mx-1 gap-3.5',
           current &&
-            `after:absolute after:content-[''] after:top-[-6px]  after:right-0  after:w-1  after:min-h-9  after:ml-auto after:bg-purple-200 after:rounded-sm`,
+            'after:h-full after:ml-auto after:border-2 after:border-purple-200 after:rounded-sm',
         )}
       >
-        <Image src={src} alt={alt} width={18} height={18} style={style} />
-        <span className="text-base font-medium text-zinc-50">{children}</span>
+        <Image className="ml-5" width={18} height={18} src={src} alt={alt} />
+        <span className="font-medium text-zinc-50">{children}</span>
       </Link>
     </li>
   );

@@ -13,6 +13,10 @@ module.exports = {
       maxWidth: {
         custom: '700px',
       },
+      fontFamily: {
+        jakarta: ['var(--font-jakarta)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+      },
     },
   },
   plugins: [],

@@ -7,8 +7,8 @@ export interface DashboardCardProps {
 
 export default function DashboardCard({ label, children }: DashboardCardProps) {
   return (
-    <div className="border border-solid border-gray-100 bg-gray-100 w-full h-full rounded">
-      <p className="font-medium text-xl text-gray-900 p-5">{label}</p>
+    <div className="rounded bg-gray-100 w-full">
+      <p className="p-5 text-xl	text-gray-900 font-medium">{label}</p>
       <div>{children}</div>
     </div>
   );

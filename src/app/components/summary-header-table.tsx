@@ -1,19 +1,19 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 
-export interface SummaryHeaderTableProps {
+export interface SummaryTableHeaderProps {
   align?: 'left' | 'center' | 'right';
   children: React.ReactNode;
 }
 
-export default function SummaryHeaderTable({
+export default function SummaryTableHeader({
   align = 'left',
   children,
-}: SummaryHeaderTableProps) {
+}: SummaryTableHeaderProps) {
   return (
     <th
       className={clsx(
-        'py-1.5 px-5 text-xs font-normal first-of-type:rounded-l-sm last-of-type:rounded-r-sm',
+        'py-2 px-5 text-xs font-normal first-of-type:rounded-l-sm last-of-type:rounded-r-sm',
         `text-${align}`,
         '[&:nth-child(3n+1)]:text-white [&:nth-child(3n+1)]:bg-gray-900',
         '[&:nth-child(3n+2)]:text-gray-900 [&:nth-child(3n+2)]:bg-purple-200',
